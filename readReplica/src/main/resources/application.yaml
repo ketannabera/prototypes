@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    primary:
+      jdbc-url: jdbc:postgresql://localhost:5432/employee
+      driver-class-name: org.postgresql.Driver
+
+    replica:
+      jdbc-url: jdbc:postgresql://localhost:5433/employee
+      driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
