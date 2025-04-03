@@ -1,7 +1,7 @@
 package multithreading;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         SharedBuffer sharedBuffer = new SharedBuffer();  // Single shared instance
 
         // Producer thread
@@ -19,6 +19,7 @@ public class Main {
         });
 
         producer.start();
+        Thread.sleep(10000);
         consumer.start();
     }
 }

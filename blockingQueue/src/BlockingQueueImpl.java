@@ -23,7 +23,7 @@ public class BlockingQueueImpl {
         lock.lock();
         if (this.isFull()){
             System.out.println("*** PUT WAITING AS LIST FULL ***");
-            this.notFull.await();
+            this.notFull.await(); // Await current thread till getting NOT FULL signal.
         }
         this.items.add(o);
         System.out.println("*** ADDED " + o.toString());
@@ -35,7 +35,7 @@ public class BlockingQueueImpl {
         lock.lock();
         if (this.isEmpty()){
             System.out.println("*** GET WAITING AS LIST EMPTY ***");
-            this.notEmpty.await();
+            this.notEmpty.await(); // Await current thread till getting NOT EMPTY signal.
         }
         Object item = this.items.get(0);
         this.items = this.items.subList(1,this.items.size());

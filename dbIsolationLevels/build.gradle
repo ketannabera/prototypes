@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.k10.prototypes.dbIsolationLevels'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.postgresql:postgresql:42.5.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    // Configure the main class for the 'run' task
+    mainClass = 'Main'
+}

@@ -17,12 +17,13 @@ class SharedBuffer {
         }
         buffer.add(item);
         System.out.println("Produced: " + item);
-        try {
-            notifyAll();
-            wait();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        notifyAll();
+//        try {
+//            notifyAll();
+//            //wait();
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     public synchronized int consume() {
